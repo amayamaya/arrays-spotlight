@@ -15,7 +15,7 @@ export const printAddress = ({ name, address }) =>
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the function definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = ({username, name: {first, last}, info: {favorites: {food, color}, pet: {type, name}, address: {street, number, city, country}}}) => {
+export const printUserInfo = ({ username, name: { first, last }, info: { favorites: { food, color }, pet: { type, name }, address: { street, number, city, country } } }) => {
   return `
     Username: ${username},
     Full Name: ${first} ${last},
@@ -32,11 +32,11 @@ export const printUserInfo = ({username, name: {first, last}, info: {favorites: 
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
 export const getSum = (...getSum) => {
-  let total = 0;
+  let total = 0
   for (const sum of getSum) {
-    total += sum;
+    total += sum
   }
-  return total;
+  return total
 }
 
 
@@ -46,10 +46,10 @@ export const getSum = (...getSum) => {
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
 export const getFirstTwoArgs = (...rest) => {
-  let arrayOne = [...rest].slice(0, 2);
-  let arrayTwo = [...rest].slice(2); 
+  let arrayOne = [...rest].slice(0, 2)
+  let arrayTwo = [...rest].slice(2) 
 
-  return [...arrayOne, arrayTwo];
+  return [...arrayOne, arrayTwo]
 
 }
 
@@ -75,21 +75,21 @@ export const getFirstTwoArgs = (...rest) => {
 //    use spread operator to create a new object
 
 export const addSneakerCount = ({ shoes, slogan, logo, headquarters }) => {
-  const nike={shoes, slogan, logo, headquarters}
-  const sneakerCount=shoes.length
-  return {nike, sneakerCount}
+  const nike = { shoes, slogan, logo, headquarters }
+  const sneakerCount = shoes.length
+  return { nike, sneakerCount }
 }
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
-export const getBrandNames = (brands) => Object.keys(brands);
+export const getBrandNames = (brands) => Object.keys(brands)
 
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
-export const totalSneakerCount = ({Nike: { shoes }, Puma: {shoes: shoes1}, Adidas: {shoes: shoes2}}) => {
-  return shoes.length + shoes2.length + shoes1.length;}
+export const totalSneakerCount = ({ Nike: { shoes }, Puma: { shoes: shoes1 }, Adidas: { shoes: shoes2 } }) => {
+  return shoes.length + shoes2.length + shoes1.length}
 
 // INPUT: An object
 // OUTPUT: An array with key value pairs converted to arrays
